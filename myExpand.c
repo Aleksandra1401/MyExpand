@@ -1,7 +1,10 @@
 /* Program to simulate simplified version of Unix utility "expand". Reads input from stdin, and provided text file expands tabs
- * to appropriate number of spaces.Outputs to stdout. Default case (no arguments provided) expands tab to 8 characters(spaces). Provided -t as a
- * first and an integer as a second argument, outputs expanded version with  number of characters for expansion is specified by
- * user
+ * to appropriate number of spaces. Program acts like a fileter, input is redirected from the file. Outputs to stdout. Default case 
+ * (no arguments provided) expands tab to 8 characters(spaces). Provided -t as a first and an integer as a second argument, outputs 
+ * expanded version of the file with the number of space characters to replace each tab character specified by user.
+ * Usage: 
+ * 1. ./myexpand -t numSpaces < filename.txt
+ * 2. ./myexpand < filename.txt
  * Author: Aleksandra Milinovic
  * Written 2/17/2020
  */
@@ -42,8 +45,8 @@ return 0;
 
 /*
  * Takes an integer representing user's specified number of characters, reads file character by character until the end of file
- * is reached. Checks if character is not a Tab an displays it in that case. If character is a Tab, it displays appropriate
- * number of spaces instead.
+ * is reached. If character is a Tab, it gets substituted for appropriate number of spaces instead. Othervise, the character is 
+ * displayed as is.
  */
 void expand (int spaces) {
 
